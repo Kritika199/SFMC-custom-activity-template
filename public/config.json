@@ -7,79 +7,89 @@
         "category": "message"
     },
 
-    "type": "REST",
-    "lang":
-    {
-        "en-US":
-        {
-            "name": "Test Email",
-            "description": "Test this custom activity",
-            "step1Label": "Configure Activity"
-        }
     },
-    "arguments":
-    {
-        "execute":
-        {
-            "inArguments": [
-              { 
-                "SAMPLE_PARAM": "SAMPLE PARAM DATA FROM CONFIG.JSON"
-              }
-            ],
-            "outArguments": [],
-            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/execute",
-            "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": true,
-            "timeout": 10000
-        }
-    },
-    
-    "configurationArguments":
-    {
-        "applicationExtensionKey": "22995f2c-a01c-472a-b92a-c31b7146c887",
-        "save":
-        {
-            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/save",
-            "verb": "POST",
-            "useJwt": true
-        },
-        "publish":
-        {
-            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/publish",
-            "verb": "POST",
-            "useJwt": true
-        },
-        "stop":
-        {
-            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/stop",
-            "verb": "POST",
-            "useJwt": true
-        },
-        "validate":
-        {
-            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/validate",
-            "verb": "POST",
-            "useJwt": true
-        }
-    },
-    "userInterfaces":
-    {
-        "configModal": {
-            "height": 700,
-            "width": 1000,
-            "fullscreen": false
-        }
-    },
-    "schema": 
-    {
-        "arguments":{
-            "execute": {
-                "inArguments": [],
-                "outArguments": []
-            }
-        }
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "REST Activity (Workflow API v1.1)",
+      "description": "An example REST activity using workflow API v1.1 format."
     }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        {
+          "emailAddress": "{{InteractionDefaults.Email}}"
+        },
+        {
+          "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+        }
+      ],
+      "outArguments": [
+        {
+          "foundSignupDate": ""
+        }
+      ],
+      "url": "https://sfmc-custom-activity-template.vercel.app/execute"
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "URI/for/your/activity/save"
+    },
+    "publish": {
+      "url": "URI/for/your/activity/publish"
+    },
+    "validate": {
+      "url": "URI/for/your/activity/validate"
+    },
+    "stop": {
+      "url": "URI/for/your/activity/stop"
+    }
+  },
+  "wizardSteps": [
+    { "label": "Step 1", "key": "step1" },
+    { "label": "Step 2", "key": "step2" },
+    { "label": "Step 3", "key": "step3" },
+    { "label": "Step 4", "key": "step4", "active": false }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 200,
+      "width": 300,
+      "fullscreen": true
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "phoneNumber": {
+              "dataType": "Phone",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "emailAddress": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          }
+        ],
+        "outArguments": [
+          {
+            "foundSignupDate": {
+              "dataType": "Date",
+              "direction": "out",
+              "access": "visible"
+            }
+          }
+        ]
+      }
+    }
+  }
 }
+  
