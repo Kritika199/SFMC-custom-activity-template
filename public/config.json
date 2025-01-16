@@ -23,7 +23,7 @@
         {
             "inArguments": [
               { 
-                "SAMPLE_PARAM":  "{{Contact.Default.EmailAddress}}"
+                "SAMPLE_PARAM": "SAMPLE PARAM DATA FROM CONFIG.JSON"
               }
             ],
             "outArguments": [],
