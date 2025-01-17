@@ -46,25 +46,29 @@
         {
             "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/save",
             "verb": "POST",
-            "useJwt": true
+            "useJwt": true,
+            "timeout": 2000
         },
         "publish":
         {
             "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/publish",
             "verb": "POST",
-            "useJwt": true
+            "useJwt": true,
+            "timeout": 2000
         },
         "stop":
         {
             "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/stop",
             "verb": "POST",
-            "useJwt": true
+            "useJwt": true,
+            "timeout": 2000
         },
         "validate":
         {
             "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/validate",
             "verb": "POST",
-            "useJwt": true
+            "useJwt": true,
+            "timeout": 2000
         }
     },
     "userInterfaces":
