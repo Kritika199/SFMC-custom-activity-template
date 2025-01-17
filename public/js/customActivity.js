@@ -48,7 +48,7 @@ define(['postmonger'], function (Postmonger) {
     function save() {
         payload['arguments'].execute.inArguments = [
             {
-                SAMPLE_PARAM: "SAMPLE PARAM DATA FROM CONFIG.JSON"
+               "email": "{{InteractionDefaults.EmailAddress}}"
             }
         ];
         payload['metaData'].isConfigured = true;
