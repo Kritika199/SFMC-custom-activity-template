@@ -29,7 +29,7 @@
               }
             ],
             "outArguments": [],
-            "url": "<HTTPS_URL_OF_APP>/journeybuilder/execute",
+            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/execute",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -44,25 +44,25 @@
         "applicationExtensionKey": "22995f2c-a01c-472a-b92a-c31b7146c887",
         "save":
         {
-            "url": "<HTTPS_URL_OF_APP>/journeybuilder/save",
+            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/save",
             "verb": "POST",
             "useJwt": true
         },
         "publish":
         {
-            "url": "<HTTPS_URL_OF_APP>/journeybuilder/publish",
+            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/publish",
             "verb": "POST",
             "useJwt": true
         },
         "stop":
         {
-            "url": "<HTTPS_URL_OF_APP>/journeybuilder/stop",
+            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/stop",
             "verb": "POST",
             "useJwt": true
         },
         "validate":
         {
-            "url": "<HTTPS_URL_OF_APP>/journeybuilder/validate",
+            "url": "https://sfmc-custom-activity-template.vercel.app/journeybuilder/validate",
             "verb": "POST",
             "useJwt": true
         }
