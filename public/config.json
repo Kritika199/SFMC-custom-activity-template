@@ -4,92 +4,82 @@
     {
         "icon": "images/icon.png",
         "iconSmall": "images/iconSmall.png",
-        "category": "message"
+        "category": "<CATEGORY_OF_APP_BASED_ON_DOCS>"
     },
 
-    },
-  "type": "REST",
-  "lang": {
-    "en-US": {
-      "name": "REST Activity (Workflow API v1.1)",
-      "description": "An example REST activity using workflow API v1.1 format."
-    }
-  },
-  "arguments": {
-    "execute": {
-      "inArguments": [
+    "type": "REST",
+    "lang":
+    {
+        "en-US":
         {
-          "emailAddress": "{{InteractionDefaults.Email}}"
+            "name": "<NAME_OF_APP>",
+            "description": "<DESC_OF_APP>",
+            "step1Label": "Configure Activity"
+        }
+    },
+    "arguments":
+    {
+        "execute":
+        {
+            "inArguments": [
+              { 
+                "SAMPLE_PARAM": "SAMPLE PARAM DATA FROM CONFIG.JSON"
+              }
+            ],
+            "outArguments": [],
+            "url": "<HTTPS_URL_OF_APP>/journeybuilder/execute",
+            "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 10000
+        }
+    },
+    
+    "configurationArguments":
+    {
+        "applicationExtensionKey": "<APP EXTENSION KEY>",
+        "save":
+        {
+            "url": "<HTTPS_URL_OF_APP>/journeybuilder/save",
+            "verb": "POST",
+            "useJwt": true
         },
+        "publish":
         {
-          "phoneNumber": "{{Contact.Default.PhoneNumber}}"
-        }
-      ],
-      "outArguments": [
+            "url": "<HTTPS_URL_OF_APP>/journeybuilder/publish",
+            "verb": "POST",
+            "useJwt": true
+        },
+        "stop":
         {
-          "foundSignupDate": ""
+            "url": "<HTTPS_URL_OF_APP>/journeybuilder/stop",
+            "verb": "POST",
+            "useJwt": true
+        },
+        "validate":
+        {
+            "url": "<HTTPS_URL_OF_APP>/journeybuilder/validate",
+            "verb": "POST",
+            "useJwt": true
         }
-      ],
-      "url": "https://sfmc-custom-activity-template.vercel.app/execute"
-    }
-  },
-  "configurationArguments": {
-    "save": {
-      "url": "URI/for/your/activity/save"
     },
-    "publish": {
-      "url": "URI/for/your/activity/publish"
+    "userInterfaces":
+    {
+        "configModal": {
+            "height": 700,
+            "width": 1000,
+            "fullscreen": false
+        }
     },
-    "validate": {
-      "url": "URI/for/your/activity/validate"
-    },
-    "stop": {
-      "url": "URI/for/your/activity/stop"
-    }
-  },
-  "wizardSteps": [
-    { "label": "Step 1", "key": "step1" },
-    { "label": "Step 2", "key": "step2" },
-    { "label": "Step 3", "key": "step3" },
-    { "label": "Step 4", "key": "step4", "active": false }
-  ],
-  "userInterfaces": {
-    "configModal": {
-      "height": 200,
-      "width": 300,
-      "fullscreen": true
-    }
-  },
-  "schema": {
-    "arguments": {
-      "execute": {
-        "inArguments": [
-          {
-            "phoneNumber": {
-              "dataType": "Phone",
-              "isNullable": false,
-              "direction": "in"
+    "schema": 
+    {
+        "arguments":{
+            "execute": {
+                "inArguments": [],
+                "outArguments": []
             }
-          },
-          {
-            "emailAddress": {
-              "dataType": "Email",
-              "isNullable": false,
-              "direction": "in"
-            }
-          }
-        ],
-        "outArguments": [
-          {
-            "foundSignupDate": {
-              "dataType": "Date",
-              "direction": "out",
-              "access": "visible"
-            }
-          }
-        ]
-      }
+        }
     }
-  }
 }
-  
